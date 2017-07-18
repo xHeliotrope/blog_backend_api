@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY=secret_key_goes_here
+SECRET_KEY = secret_key_goes_here
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ryan_data',
+    'ryan_api',
 ]
 
 MIDDLEWARE = [
@@ -75,9 +75,13 @@ WSGI_APPLICATION = 'ryan_data.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 import dj_database_url
+
 DATABASES = {
-    #'default':  dj_database_url.config()
-    'default': { 'ENGINE': 'django.db.backends.postgresql_psycopg2', 'NAME': 'ryan', }
+    #'default': dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ryan',
+    }
 }
 
 
